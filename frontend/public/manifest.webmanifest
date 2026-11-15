@@ -1,0 +1,9 @@
+{
+  "name": "FINN — a filter, not a feed",
+  "short_name": "FINN",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0c1116",
+  "theme_color": "#0c1116",
+  "icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}

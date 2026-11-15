@@ -1,0 +1,32 @@
+# Mock portfolio — 18 NSE names chosen to stress the filter, not to look pretty.
+# Mix: 9 large caps across very different businesses (a bank and an NBFC behave
+# nothing like an EMS assembler), plus mid/small caps where filings and volume
+# spikes are noisier and the filter has to earn its keep.
+#
+# sector is used for the "is it the stock or the sector?" decomposition;
+# index is the yfinance symbol of the sector index (falls back to Nifty 50).
+portfolio:
+  - {symbol: RELIANCE,   name: Reliance Industries,      sector: Energy & Conglomerate, size: large}
+  - {symbol: HDFCBANK,   name: HDFC Bank,                sector: Banks,                 size: large, index: "^NSEBANK"}
+  - {symbol: TCS,        name: Tata Consultancy Services, sector: IT Services,          size: large, index: "^CNXIT"}
+  - {symbol: BHARTIARTL, name: Bharti Airtel,            sector: Telecom,               size: large}
+  - {symbol: LT,         name: Larsen & Toubro,          sector: Capital Goods / EPC,   size: large}
+  - {symbol: ITC,        name: ITC,                      sector: FMCG,                  size: large, index: "^CNXFMCG"}
+  - {symbol: SUNPHARMA,  name: Sun Pharmaceutical,       sector: Pharma,                size: large, index: "^CNXPHARMA"}
+  - {symbol: BAJFINANCE, name: Bajaj Finance,            sector: NBFC,                  size: large}
+  - {symbol: MARUTI,     name: Maruti Suzuki,            sector: Auto,                  size: large, index: "^CNXAUTO"}
+  - {symbol: TITAN,      name: Titan Company,            sector: Consumer Discretionary, size: large}
+  - {symbol: TRENT,      name: Trent,                    sector: Retail,                size: large}
+  - {symbol: HAL,        name: Hindustan Aeronautics,    sector: Defence PSU,           size: large}
+  - {symbol: POLYCAB,    name: Polycab India,            sector: Cables & Wires,        size: mid}
+  - {symbol: DIXON,      name: Dixon Technologies,       sector: EMS,                   size: mid}
+  - {symbol: PERSISTENT, name: Persistent Systems,       sector: IT Services,           size: mid, index: "^CNXIT"}
+  - {symbol: CDSL,       name: Central Depository Services, sector: Capital Markets,    size: mid}
+  - {symbol: DEEPAKNTR,  name: Deepak Nitrite,           sector: Chemicals,             size: mid}
+  - {symbol: KAYNES,     name: Kaynes Technology,        sector: EMS,                   size: small}
+
+# Ad-hoc research demo set (deliberately outside the portfolio). The research
+# engine is not hard-wired to these — any NSE symbol with a screener.in page works.
+research_demo: [ASIANPAINT, PIDILITIND, BEL, ETERNAL]
+
+market_index: "^NSEI"   # Nifty 50 — the "market" in the market model
